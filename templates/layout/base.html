@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        {% block header %}{% include 'layout/header.html' %}{% endblock header %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CopperCore Corp.</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% block topmenu %}{% include 'layout/topmenu.html' %}{% endblock topmenu %}
+
+        <div id=root></div>
+
+        {% block footer %}{% include 'layout/footer.html' %}{% endblock footer %}
+        <!--  <script type="text/javascript" src="{{ url_for('static', path='/js/bundle.js') }}"  async defer></script> -->
+        <script type="text/javascript" src="https://kit.fontawesome.com/357b8a8292.js" crossorigin="anonymous"></script>
+       
+    </body>
+</html>
