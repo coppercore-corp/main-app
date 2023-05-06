@@ -29,5 +29,5 @@ jobs:
         ruff --format=github --target-version=py37 .
     - name: Check Routes
       run: |
-        pytest test/check_routes.py
+        pytest check_routes.py
     
