@@ -14,4 +14,4 @@ def test_read_routes():
 
     response = client.get("/contacts")
     assert response.status_code == 200
-   assert "<title>CopperCore Corp. Contacts</title>" in response.text
+    assert "<title>CopperCore Corp. Contacts</title>" in response.text
