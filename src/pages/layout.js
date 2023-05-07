@@ -37,7 +37,7 @@ function Menu(){
     }
     return (
         <>
-            <a href="#" onClick={handleOpen}><i className="fa-solid fa-bars fa-2xl"></i></a>
+            <a href="#" onClick={handleOpen}><i className="fa-solid fa-bars fa-2xl --font-white"></i></a>
             <Drawer
                 sx={{
                     width: drawerWidth,
