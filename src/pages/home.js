@@ -82,7 +82,7 @@ function Home() {
                     let temp = about_details.getBoundingClientRect();
                     
                     if (temp.height > 550) {
-                        container.style.height = (temp.height + 30)+'px';
+                        container.style.height = (temp.height + about_img.height)+'px';
                     }else{
                         container.style.minHeight = 550+'px';
                     }
