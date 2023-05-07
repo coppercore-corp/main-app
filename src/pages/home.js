@@ -4,19 +4,19 @@ import { Paper, Button } from '@mui/material';
 
 const items = [
     {
-        name: "UV Light",
-        description: "Bacterial Disinfectant Machine, Eliminate harmful pathogens with UV Light - your trusted partner for UV solutions.",
-        image: "url(/static/images/carousel1.png)"
+        name: "On Service",
+        description: "On service",
+        image: "url(/static/images/carousel_onservice.png)"
     },
     {
-        name: "Vector",
-        description: "Experience the power of UV light, Ultra Violet Effect - your source for UV lamps.",
-        image: "url(/static/images/carousel2.png)"
+        name: "2KVA 3 Phase Master Power AVR",
+        description: "The power that maters",
+        image: "url(/static/images/carousel_2kva3_master_power_avr.png)"
     },
     {
-        name: "Philips",
-        description: "Enriching lives through meaningful innovations, Philips.",
-        image: "url(/static/images/carousel3.png)"
+        name: "Dahua",
+        description: "The brand that you can trust.",
+        image: "url(/static/images/carousel_dahua_units.png)"
     }
 ];
 
@@ -81,10 +81,10 @@ function Home() {
 
                     let temp = about_details.getBoundingClientRect();
                     
-                    if (temp.height > 750) {
+                    if (temp.height > 550) {
                         container.style.height = (temp.height + 30)+'px';
                     }else{
-                        container.style.minHeight = 750+'px';
+                        container.style.minHeight = 550+'px';
                     }
 
                 }else{
@@ -111,36 +111,35 @@ function Home() {
                 {items.map( (item, i) => <Item key={i} item={item} height={carousel_height}/> )}
             </Carousel>
 
-            <div className="container container__about --height-750 container__about--opac50p" ref={container_aboutus_ref}>  
+            <div className="section --padd-hor-2em" ref={container_aboutus_ref}>  
                 <div id='about-image' ref={about_img_ref} className="item about-image"></div>
                 <div id='about-details' ref={about_details_ref} className="about-details">
                     <h1>About Us</h1>
-                    <p>PZERVOULAKUS TRADING is a trading, single proprietorship based in Taguig City, Philippines. We have established longer and closer working relationships with our clients and suppliers, not only to provide immediate and reliable service but also to continually exceed expectations and goals. We create commercial flows, import and export products, and arrange and manage international projects with our partners. Our network allows us to integrate all these functions with our fruitful experience, and our numerous competencies enable us to respond to the needs of industries looking for a new market. We look forward to welcoming you to our company and working to develop and enhance your current business in the Philippines.
-                    </p>
+                    <p>CopperCore is a leading corporation specializing in the installation of Closed Circuit Television (CCTV) systems for both residential and commercial customers. With its headquarters located in the heart of the city, the company boasts a team of highly skilled and experienced technicians who are dedicated to providing quality installation services to clients across the region.</p>
+                    <p>Since its inception, CopperCore has earned a reputation for delivering reliable, innovative, and cost-effective security solutions. The company's commitment to excellence and customer satisfaction has made it a trusted name in the industry, with a loyal client base that continues to grow year after year.</p>
+                    <p>At CopperCore, the team understands the importance of security in today's world, and they work tirelessly to ensure that their clients have access to the latest technology and products to keep their homes and businesses safe. From surveillance cameras to access control systems and alarm monitoring services, CopperCore offers a comprehensive range of solutions to meet the unique needs of each client.</p>
+                    <p>With a focus on professionalism, integrity, and quality, CopperCore is committed to providing exceptional customer service and technical expertise. Whether you're a homeowner looking to install a basic CCTV system or a business owner seeking to protect your premises with advanced security solutions, CopperCore has the skills, experience, and resources to deliver the results you need.</p>
+                    </div>
+            </div>
 
-                    <p>With our extensive network, we are able to integrate various functions and respond to the needs of industries looking for a new market. Our mission is to meet the increasing and diversified demands of our customers, provide quality products and reliable services sourced from reputable manufacturers, and become the preferred supplier of our customers.
-                    </p>
-
-                    <p>At PZERVOULAKUS TRADING, we aim to give timely information to our customers regarding market trends and dynamics. We harness the creative energies of our people through teamwork and a transparent work environment, and we generate a high standard of commitment to our customers. We also treat our clients, suppliers, and employees with honesty and respect.
-                    </p>
+            <div className="section --padd-hor-2em">
+                <div className="section__mission">
+                    <h1>Mission</h1>
+                    <p>CopperCore's mission is to provide exceptional security solutions to our clients through the latest technology and products, while maintaining the highest standards of professionalism, integrity, and quality. We strive to exceed our clients' expectations and build long-lasting relationships based on trust and reliability.</p>
                 </div>
             </div>
 
-            <div className="container container__mission--opac50p">
-                <div className="container__missionvission">
-                    <h1>Mission / Vision</h1>
-                    <p>At PZERVOULAKUS TRADING, we strive to meet the increasing and diversified demands of our customers by providing quality products and reliable services sourced from reputed manufacturers. Our aim is to become the preferred supplier of our customers, exceeding their quality requirements, and giving timely information regarding market dynamics. We value teamwork, a transparent work environment, and commitment to our clients, suppliers, and employees, treating them with honesty and respect.</p>
-
-                    <p>Our vision at PZERVOULAKUS TRADING is to foster growth and promote enduring business ties with our clients by providing customer responsiveness and commitment as the driving force in our quest for excellence. We seek to integrate our numerous competencies to respond to the needs of industries looking for a new market, and we look forward to welcoming new partners to our company to enhance their current business in the Philippines.
-                    </p>
-
+            <div className="section --padd-hor-2em">
+                <div className="section__vision">
+                    <h1>Vision</h1>
+                    <p>CopperCore's vision is to be the leading provider of security solutions in the industry, recognized for our innovative products, exceptional customer service, and technical expertise. We aim to expand our reach and services globally, while continuing to maintain our commitment to excellence and integrity. Our ultimate goal is to ensure that our clients feel safe and secure, knowing that they have the best security solutions in place to protect their homes and businesses.</p>
                 </div>
             </div>
            
-            <div className="container container_clients">                
-                <div className="container__item--big">
+            <div className="section section_clients">                
+                <div className="section__item--big">
                     <h1>Our Valued Clients</h1>
-                    <div className="container__clients">
+                    <div className="section__clients">
 
                         <div className="__clients__list">
                             <div className="__clients__list__item">
