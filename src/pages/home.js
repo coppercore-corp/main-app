@@ -80,9 +80,12 @@ function Home() {
                     
 
                     let temp = about_details.getBoundingClientRect();
+                    const displayValue = window.getComputedStyle(container_aboutus_ref.current).getPropertyValue('display');
                     
+                    const about_height_padd = (displayValue=='grid')?parseInt(img_width_rec.height)+30:30;
+
                     if (temp.height > 550) {
-                        container.style.height = (temp.height + about_img.height)+'px';
+                        container.style.height = (temp.height + about_height_padd)+'px';
                     }else{
                         container.style.minHeight = 550+'px';
                     }
