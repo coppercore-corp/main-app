@@ -52,61 +52,61 @@ function Home() {
     const about_img_ref = useRef(null);    
     var carousel_height = ((window.innerWidth < 610)?420:620);
 
-    useEffect(() => {
-        const container = container_aboutus_ref.current;
-        const about_details = about_details_ref.current;
-        const about_img = about_img_ref.current;
-        const about_details_orig_rec = about_details.getBoundingClientRect()
+    // useEffect(() => {
+    //     const container = container_aboutus_ref.current;
+    //     const about_details = about_details_ref.current;
+    //     const about_img = about_img_ref.current;
+    //     const about_details_orig_rec = about_details.getBoundingClientRect()
         
-        function handleScroll() {
-            let y_value = window.scrollY;
-            let img_width_rec = about_img.getBoundingClientRect()
-            let padding = 20;
+    //     function handleScroll() {
+    //         let y_value = window.scrollY;
+    //         let img_width_rec = about_img.getBoundingClientRect()
+    //         let padding = 20;
 
-            if(about_img.style.left ==''){
-                about_img.style.left = `${-img_width_rec.width + y_value * 2.5}px`;
-            }else if((-img_width_rec.width + y_value * 2.5) < 0 ){
-                about_img.style.left = `${-img_width_rec.width + y_value * 2.5}px`;
-            }
+    //         if(about_img.style.left ==''){
+    //             about_img.style.left = `${-img_width_rec.width + y_value * 2.5}px`;
+    //         }else if((-img_width_rec.width + y_value * 2.5) < 0 ){
+    //             about_img.style.left = `${-img_width_rec.width + y_value * 2.5}px`;
+    //         }
             
-            if (about_details) {
-                const container_rect = container.getBoundingClientRect();
-                if((parseInt(about_img.style.left) + img_width_rec.width + padding) > about_details_orig_rec.left){
-                    about_details.style.position = 'absolute';
-                    let new_width = (container_rect.width - (parseInt(about_img.style.left)+img_width_rec.width)) * 0.95;
-                    about_details.style.width = (new_width - padding) + 'px';
+    //         if (about_details) {
+    //             const container_rect = container.getBoundingClientRect();
+    //             if((parseInt(about_img.style.left) + img_width_rec.width + padding) > about_details_orig_rec.left){
+    //                 about_details.style.position = 'absolute';
+    //                 let new_width = (container_rect.width - (parseInt(about_img.style.left)+img_width_rec.width)) * 0.95;
+    //                 about_details.style.width = (new_width - padding) + 'px';
                     
-                    about_details.style.left = `${parseInt(about_img.style.left) + padding + img_width_rec.width}px`;
+    //                 about_details.style.left = `${parseInt(about_img.style.left) + padding + img_width_rec.width}px`;
                     
 
-                    let temp = about_details.getBoundingClientRect();
-                    const displayValue = window.getComputedStyle(container_aboutus_ref.current).getPropertyValue('display');
+    //                 let temp = about_details.getBoundingClientRect();
+    //                 const displayValue = window.getComputedStyle(container_aboutus_ref.current).getPropertyValue('display');
                     
-                    const about_height_padd = (displayValue=='grid')?parseInt(img_width_rec.height)+30:30;
+    //                 const about_height_padd = (displayValue=='grid')?parseInt(img_width_rec.height)+30:30;
 
-                    if (temp.height > 550) {
-                        container.style.height = (temp.height + about_height_padd)+'px';
-                    }else{
-                        container.style.minHeight = 550+'px';
-                    }
+    //                 if (temp.height > 550) {
+    //                     container.style.height = (temp.height + about_height_padd)+'px';
+    //                 }else{
+    //                     container.style.minHeight = 550+'px';
+    //                 }
 
-                }else{
-                    about_details.style.position = 'relative';
-                    about_details.style.width = about_details_orig_rec.width + 'px';
-                    about_details.style.left = 'unset';
-                }
+    //             }else{
+    //                 about_details.style.position = 'relative';
+    //                 about_details.style.width = about_details_orig_rec.width + 'px';
+    //                 about_details.style.left = 'unset';
+    //             }
 
 
                 
-            }
+    //         }
 
-        }    
-        window.addEventListener('scroll', handleScroll);
+    //     }    
+    //     window.addEventListener('scroll', handleScroll);
     
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
     
     return (
         <>
@@ -116,9 +116,12 @@ function Home() {
 
             <div className="section --padd-hor-2em" ref={container_aboutus_ref}>  
                 <div id='about-image' ref={about_img_ref} className="item about-image"></div>
-                <div id='about-details' ref={about_details_ref} className="about-details">
+                <div className="about-details">
                     <h1>About Us</h1>
-                    <p>CopperCore is a leading corporation specializing in the installation of Closed Circuit Television (CCTV) systems for both residential and commercial customers. With its headquarters located in the heart of the city, the company boasts a team of highly skilled and experienced technicians who are dedicated to providing quality installation services to clients across the region.</p>
+                    <p>COPPERCORE is a company committed to performing Electrical and Mechanical Services extended to Civil and Architectural works established in year of 2017. A group of highly knowledgeable, experienced and creative engineers and team players in the industry.</p>
+                    <p>COPPERCORE was named after a cable called “Flexible Copper Core” that is used to transmit electricity and signal which we also define as a vessel of power, strength and unity.</p>
+                    <p>COPPERCORE was formed to fill the demand for practical knowledge and hands on experience in Maintenance, installation and trouble shooting and design of control systems.</p>
+                    <p>COPPERCORE is a leading corporation specializing in the installation of Closed Circuit Television (CCTV) systems for both residential and commercial customers. With its headquarters located in the heart of the city, the company boasts a team of highly skilled and experienced technicians who are dedicated to providing quality installation services to clients across the region.</p>
                     <p>Since its inception, CopperCore has earned a reputation for delivering reliable, innovative, and cost-effective security solutions. The company's commitment to excellence and customer satisfaction has made it a trusted name in the industry, with a loyal client base that continues to grow year after year.</p>
                     <p>At CopperCore, the team understands the importance of security in today's world, and they work tirelessly to ensure that their clients have access to the latest technology and products to keep their homes and businesses safe. From surveillance cameras to access control systems and alarm monitoring services, CopperCore offers a comprehensive range of solutions to meet the unique needs of each client.</p>
                     <p>With a focus on professionalism, integrity, and quality, CopperCore is committed to providing exceptional customer service and technical expertise. Whether you're a homeowner looking to install a basic CCTV system or a business owner seeking to protect your premises with advanced security solutions, CopperCore has the skills, experience, and resources to deliver the results you need.</p>
