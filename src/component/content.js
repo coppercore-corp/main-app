@@ -119,24 +119,15 @@ const Content = (props) => {
                         background_wall.style.transform = 'translateY(0)';
                         background_wall.style.transition = 'transform 0.4s ease-in';
                     }else{
-                        // background_wall.style.opacity = 0;
-                        background_wall.style.transform = 'translateY(-100%)';
+                        background_wall.style.transform = 'translateY(100%)';
                         background_wall.style.transition = 'transform 0.4s ease-out';
                     }      
-                    
-                    if((content_bcr.top + details_bcr.height) <= 0){
-                        background_wall.style.transform = 'translateY(100%)';
+
+                    if((details_bcr.top + details_bcr.height - screen_height) <= 0){
+                        background_wall.style.transform = 'translateY(-100%)';
                         background_wall.style.transition = 'transform 0.4s ease-out';
                     }
                 }
-               
-                // console.log(content_bcr.top + (details_bcr.height * exit_multiplier));
-
-                // if((content_bcr.top + (details_bcr.height * exit_multiplier)) < 0 && background_wall){
-                //     background_wall.style.opacity = 0;
-                //     background_wall.style.transform = 'translateY(-100%)';        
-                // }                
-                
                 setImageWidth(image_bcr.width);
             }
             
