@@ -128,7 +128,7 @@ function Home() {
                 <p><b>COPPERCORE</b>'s CCTV Security Installation & Planning services provide clients with reliable, cutting-edge surveillance solutions to safeguard their premises. With our expertise, state-of-the-art technologies, and commitment to excellence, we deliver tailored CCTV installations, system optimization, remote monitoring, and ongoing maintenance and support. Trust CopperCore to enhance your security posture and provide you with peace of mind through our comprehensive CCTV security solutions.</p>
 
             </Content>
-            
+           
             <Content
                 image={"/static/images/content_service6.png"}
                 enable_background={true}
@@ -278,7 +278,7 @@ function Home() {
 
                 <p><b>COPPERCORE</b>'s Water System and Pumps Control services deliver reliable, efficient, and customized solutions to optimize water management and pump operation. With our expertise, cutting-edge technologies, and commitment to excellence, we help clients achieve optimal water usage, energy efficiency, and system reliability. Trust CopperCore to provide you with comprehensive control solutions tailored to your specific needs, ensuring efficient water distribution, optimal pump performance, and reliable water system operation.CopperCore's Water System and Pumps Control services deliver reliable, efficient, and customized solutions to optimize water management and pump operation. With our expertise, cutting-edge technologies, and commitment to excellence, we help clients achieve optimal water usage, energy efficiency, and system reliability. Trust CopperCore to provide you with comprehensive control solutions tailored to your specific needs, ensuring efficient water distribution, optimal pump performance, and reliable water system operation.</p>
             </Content>
-
+        
             
             <div className="section section_clients">                
                 <div className="section__item--big">
