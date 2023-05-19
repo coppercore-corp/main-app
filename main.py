@@ -12,35 +12,17 @@ app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 templates = Jinja2Templates(directory=template_dir)
 
-
+@app.get("/contacts", response_class=HTMLResponse)
+@app.get("/products", response_class=HTMLResponse)
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):
+    temp = str(request.url).split("/").pop()
+    page = "Home" if temp == "" else temp.capitalize()
+
     context = {
         "request": request,
-        "title": "Welcome Home",
-        "url": "/",
-        "page": "Home"
-    }
-    return templates.TemplateResponse("home/index.html", context)
-
-
-@app.get("/products", response_class=HTMLResponse)
-def products(request: Request):
-    context = {
-        "request": request,
-        "title": "Our Products",
-        "url": "/products",
-        "page": "Products"
-    }
-    return templates.TemplateResponse("home/index.html", context)
-
-
-@app.get("/contacts", response_class=HTMLResponse)
-def contacts(request: Request):
-    context = {
-        "request": request,
-        "title": "Get in touch with us",
-        "url": "/contacts",
-        "page": "Contacts"
+        "title": "Welcome %s" % page,
+        "url": str(request.url),
+        "page": page
     }
     return templates.TemplateResponse("home/index.html", context)

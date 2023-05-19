@@ -265,6 +265,7 @@ body {
     max-width: 300px;
 }
 
+
 @media (max-width: 1540px) and (min-width: 1000px) {
 	.section__clients {
 		grid-template-columns: repeat(3, auto);
@@ -327,7 +328,7 @@ body {
 	}
 	.about-details { 	
 		position: relative !important;
-		width: 90% !important;
+		width: 100% !important;
 		left: unset !important;
 		margin: 1rem auto !important;
 	}
