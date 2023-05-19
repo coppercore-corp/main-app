@@ -265,6 +265,7 @@ body {
     max-width: 300px;
 }
 
+
 @media (max-width: 1540px) and (min-width: 1000px) {
 	.section__clients {
 		grid-template-columns: repeat(3, auto);
