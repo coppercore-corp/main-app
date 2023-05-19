@@ -128,6 +128,7 @@ function Home() {
                 <p><b>COPPERCORE</b>'s CCTV Security Installation & Planning services provide clients with reliable, cutting-edge surveillance solutions to safeguard their premises. With our expertise, state-of-the-art technologies, and commitment to excellence, we deliver tailored CCTV installations, system optimization, remote monitoring, and ongoing maintenance and support. Trust CopperCore to enhance your security posture and provide you with peace of mind through our comprehensive CCTV security solutions.</p>
 
             </Content>
+            
             <Content
                 image={"/static/images/content_service6.png"}
                 enable_background={true}
@@ -156,7 +157,7 @@ function Home() {
 
                 <p><b>COPPERCORE</b>'s Solar Panel Installation and Planning services offer sustainable energy solutions tailored to your specific needs. With our expertise, high-quality products, and commitment to excellence, we help clients harness the power of solar energy, reduce their environmental impact, and achieve long-term energy savings. Trust CopperCore to provide you with a comprehensive solar installation that maximizes energy generation and supports your sustainable energy goals.</p>
             </Content>
-            
+             
             <Content
                 image={"/static/images/content_service1.png"}
                 enable_background={true}

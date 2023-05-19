@@ -11,6 +11,7 @@ const Container = styled('div')(({theme, has_image, horizontal_direction='ltr', 
     gap: '10px',
     direction: horizontal_direction,  
     position: "relative",
+    overflow: "hidden",
     '@media (max-width: 768px)': {
         gridTemplateColumns: '100%', // Adjust the column layout for smaller screens
     },
@@ -64,6 +65,7 @@ const ItemDetails = styled('div')(({theme, has_image, horizontal_direction='ltr'
 }));
 
 const BackgroundWall = styled('div')(({theme, src_url})=>({
+    position: 'sticky',
     position: 'fixed',
     width : '100vw',
     height: '100vh',
@@ -74,7 +76,8 @@ const BackgroundWall = styled('div')(({theme, src_url})=>({
     backgroundSize: "cover",
     opacity: 0,
     transition: 'transform 0.2s ease-in',    
-    transform: 'translateY(100%)'    
+    transform: 'translateY(100%)',
+    backgroundPosition: 'center center'  
 }));
     
 const Content = (props) => {
@@ -92,40 +95,49 @@ const Content = (props) => {
         const details = details_ref.current;
 
         const hor_direction = props.direction || 'ltr';
+        const exit_multiplier = 0.55;
+        const entry_multiplier = 0.9;
+        const screen_height = window.innerHeight;
+        
+        
         const handleScroll = () => {
-            let screen_height = window.innerHeight;
             
-            if(image){
-                let image_bcr = image.getBoundingClientRect();
-                let exit_multiplier = 0.55;
-                let entry_multiplier = 0.9;
-                let details_bcr = details.getBoundingClientRect();
-
+            if(image && details && content){
+                const image_bcr = image.getBoundingClientRect();
+                const details_bcr = details.getBoundingClientRect();
+                const content_bcr = content.getBoundingClientRect();          
+                
                 if(image_bcr.top <= (screen_height * entry_multiplier)){      
                     image.style.left = 0;   
-                    if(background_wall){
+                }else if(image_bcr.top > (details_bcr.height * entry_multiplier)){  
+                    image.style.left = (hor_direction === 'ltr') ? `-${image_bcr.width}px` : (image_bcr.width * 2)+"px";                    
+                }      
+                
+                if(props.enable_background && background_wall){
+                    if(content_bcr.top <= (screen_height * entry_multiplier)){                    
                         background_wall.style.opacity = 0.2;
                         background_wall.style.transform = 'translateY(0)';
-                    }             
-                }else if(image_bcr.top > (details_bcr.height * exit_multiplier)){   
-                    console.log('here...')             ;
-                    image.style.left = (hor_direction === 'ltr') ? `-${image_bcr.width}px` : (image_bcr.width * 2)+"px"; 
-                    if(background_wall){
-                        background_wall.style.opacity = 0;
+                        background_wall.style.transition = 'transform 0.4s ease-in';
+                    }else{
+                        // background_wall.style.opacity = 0;
+                        background_wall.style.transform = 'translateY(-100%)';
+                        background_wall.style.transition = 'transform 0.4s ease-out';
+                    }      
+                    
+                    if((content_bcr.top + details_bcr.height) <= 0){
                         background_wall.style.transform = 'translateY(100%)';
+                        background_wall.style.transition = 'transform 0.4s ease-out';
                     }
                 }
+               
+                // console.log(content_bcr.top + (details_bcr.height * exit_multiplier));
+
+                // if((content_bcr.top + (details_bcr.height * exit_multiplier)) < 0 && background_wall){
+                //     background_wall.style.opacity = 0;
+                //     background_wall.style.transform = 'translateY(-100%)';        
+                // }                
                 
-                if(background_wall){
-                    let content_bcr = content.getBoundingClientRect();                    
-                    if((content_bcr.top + (details_bcr.height * exit_multiplier)) < 0 && background_wall){
-                        background_wall.style.opacity = 0;
-                        background_wall.style.transform = 'translateY(-100%)';        
-                    }                
-                }
                 setImageWidth(image_bcr.width);
-                    
-                
             }
             
         };
