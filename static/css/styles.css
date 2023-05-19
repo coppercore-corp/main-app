@@ -265,6 +265,12 @@ body {
     max-width: 300px;
 }
 
+.--line-break{
+    margin: 3em auto;
+    color: red;
+    text-align: center;
+    font-size: 5rem;
+}
 
 @media (max-width: 1540px) and (min-width: 1000px) {
 	.section__clients {
