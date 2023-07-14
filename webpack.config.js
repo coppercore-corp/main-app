@@ -1,4 +1,7 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
     mode: 'development',
@@ -33,5 +36,20 @@ module.exports = {
         },
         ],
     },
-    devtool : 'source-map',
+    devtool : 'nosources-source-map',
+    optimization : {
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {
+                        drop_console: true, // remove console statement
+                    },
+                },
+            }),
+        ],
+    },
+    plugins : [
+        new BundleAnalyzerPlugin(),
+    ]
 };
